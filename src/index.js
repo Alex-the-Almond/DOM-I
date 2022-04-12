@@ -39,4 +39,59 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-console.log('project wired!')
+const allNav = document.querySelectorAll('nav a');
+// console.log(allNav);
+const allKeys = Object.keys(siteContent.nav);
+// console.log(allKeys);
+allNav.forEach((link, index) => {
+  link.classList.add('italic')
+  link.textContent = siteContent.nav[allKeys[index]]
+});
+
+const ctaH1 = document.querySelector('.cta-text h1')
+ctaH1.textContent = siteContent.cta.h1;
+
+const ctaBtn = document.querySelector('.cta-text button')
+ctaBtn.textContent = siteContent.cta.button;
+
+const textContent =  document.querySelectorAll('.text-content');
+
+
+
+textContent[0].firstElementChild.textContent = siteContent['main-content']['features-h4'];
+textContent[0].firstElementChild.nextElementSibling.textContent = siteContent['main-content']['features-content'];
+
+textContent[1].firstElementChild.textContent = siteContent['main-content']['about-h4'];
+textContent[1].firstElementChild.nextElementSibling.textContent = siteContent['main-content']['about-content'];
+
+textContent[2].firstElementChild.textContent = siteContent['main-content']['services-h4'];
+textContent[2].firstElementChild.nextElementSibling.textContent = siteContent['main-content']['services-content'];
+
+textContent[3].firstElementChild.textContent = siteContent['main-content']['product-h4']
+textContent[3].firstElementChild.nextElementSibling.textContent = siteContent['main-content']['product-content'];
+
+textContent[4].firstElementChild.textContent = siteContent['main-content']['vision-h4'];
+textContent[4].firstElementChild.nextElementSibling.textContent = siteContent['main-content']['vision-content'];
+
+const contactInformation = document.querySelector('.contact');
+
+contactInformation.firstElementChild.textContent = siteContent['contact']['contact-h4'];
+contactInformation.firstElementChild.nextElementSibling.textContent = siteContent['contact']['address'];
+contactInformation.firstElementChild.nextElementSibling.nextElementSibling.textContent = siteContent['contact']['phone'];
+contactInformation.lastElementChild.textContent = siteContent['contact']['email'];
+
+
+const footer = document.querySelector('footer a');
+footer.textContent = siteContent['footer']['copyright'];
+footer.classList.add('bold')
+
+const ctaImage = document.querySelector('#cta-img');
+ctaImage.src = 'http://localhost:9000/img/cta.png';
+
+const middleImage = document.querySelector('#middle-img');
+middleImage.src = 'http://localhost:9000/img/accent.png';
+
+const logoImage = document.querySelector('#logo-img');
+logoImage.src = 'http://localhost:9000/img/logo.png'
+
+// console.log('project wired!')
